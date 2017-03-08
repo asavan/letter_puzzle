@@ -13,11 +13,7 @@ bool NaumovaPredicator::pred(const Resolver& resolver) const
 
 TaskType make_task()
 {
-	std::vector<std::string> task;
-	task.push_back("dara");
-	task.push_back("maja");
-	task.push_back("naumova");
-	return task;
+	return { "dara", "maja", "naumova" };
 }
 
 

@@ -15,8 +15,5 @@ bool LesokPredicator::pred(const Resolver& resolver) const
 
 void lesok()
 {	
-	std::vector<std::string> task;
-	task.push_back("lesok");
-	task.push_back("elka");
-	solver_t<Resolver, LesokPredicator>(task);
+	solver_t<Resolver, LesokPredicator>({ "lesok", "elka" });
 }

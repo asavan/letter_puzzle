@@ -17,8 +17,6 @@ bool AbbaPredicator::pred(const Resolver& resolver) const
 
 void abba()
 {
-	TaskType task;
-	task.push_back("abba");
-	task.push_back("bb");
-	solver_t<Resolver, AbbaPredicator>(task);
+	// second word need to not set b to zero
+	solver_t<Resolver, AbbaPredicator>({ "abba", "b" });
 }
