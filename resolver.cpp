@@ -1,14 +1,14 @@
 #include "resolver.h"
 #include <iostream>
 
-std::string Resolver::deleteAllDublicate(const std::string& str) const
+std::string Resolver::deleteAllDublicate(const std::string& s) const
 {
 	std::string result;
-	for(size_t i = 0; i < str.size(); ++i)
+	for (const char& c : s)
 	{
-		if(result.find(str[i]) == std::string::npos)
+		if(result.find(c) == std::string::npos)
 		{
-			result.push_back(str[i]);
+			result.push_back(c);
 		}
 	}
 	return result;
@@ -69,7 +69,7 @@ bool Resolver::char_on_position(position_t k, char c) const
 bool Resolver::is_first_letter(char c) const
 {
 	std::size_t found = first_letters.find(c);	
-    return (found!=std::string::npos);
+	return (found!=std::string::npos);
 }
 
 std::string Resolver::collectAllWods(const TaskType& original)
