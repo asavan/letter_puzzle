@@ -102,8 +102,8 @@ void Resolver::print_debug() const
 }
 
 Resolver::Resolver(const TaskType& original):_original(original), m_end(9), 
-											strNoDuplicates(deleteAllDublicate(collectAllWods(original))), 
-											mass(strNoDuplicates.size())
+                                             strNoDuplicates(deleteAllDublicate(collectAllWods(original))), 
+                                             mass(strNoDuplicates.size())
 {
 	nextStep(0, begin(0));
 }
