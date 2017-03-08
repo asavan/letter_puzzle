@@ -2,10 +2,10 @@
 class LesokPredicator : public Predicator
 {
 public:
-	virtual bool pred(const Resolver& resolver);
+	virtual bool pred(const Resolver& resolver) const;
 };
 
-bool LesokPredicator::pred(const Resolver& resolver)
+bool LesokPredicator::pred(const Resolver& resolver) const
 {
 	int elka = resolver.makeAnyWord("elka"), lesok = resolver.makeAnyWord("lesok");
 	int n = lesok/elka;

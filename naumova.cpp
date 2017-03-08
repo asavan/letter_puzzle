@@ -2,10 +2,10 @@
 class NaumovaPredicator : public Predicator
 {
 public:
-	virtual bool pred(const Resolver& resolver);
+	virtual bool pred(const Resolver& resolver) const;
 };
 
-bool NaumovaPredicator::pred(const Resolver& resolver)
+bool NaumovaPredicator::pred(const Resolver& resolver) const
 {
 	int maja = resolver.makeAnyWord("maja"), naumova = resolver.makeAnyWord("naumova"), dara = resolver.makeAnyWord("dara");
 	return (dara * maja == naumova);

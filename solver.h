@@ -1,28 +1,18 @@
 #pragma once
 #include "resolver.h"
-#include <iostream>
 
 class Predicator
 {
 public:
-	virtual bool pred(const Resolver& resolver) = 0;
+	virtual bool pred(const Resolver& resolver) const = 0;
 };
 
+void solve(Resolver& resolver, const Predicator& p);
 
 template< typename T, typename P> 
 void solver_t(const TaskType& task)
 {
-	size_t count = 0;
 	T resolver(task);
 	P p;
-	// FastResolver resolver("nmdajaaraaumova");
-	do 
-	{
-		if (p.pred(resolver))
-		{
-			resolver.print();
-		}
-		++count;
-	} while(resolver.next());
-	std::cout << count << std::endl;
+	solve(resolver, p);
 }
