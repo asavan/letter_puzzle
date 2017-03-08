@@ -3,20 +3,19 @@
 #include <vector>
 
 typedef unsigned short int digit;
-typedef std::vector<std::string> taskType;
+typedef std::vector<std::string> TaskType;
 typedef short int position_t;
 
 class Resolver
 {
 public:
 	
-	Resolver(const taskType& original);
+	Resolver(const TaskType& original);
 	int makeAnyWord(const std::string& str) const;
 	int makeWord(int index) const;
 	bool next();	
 	void print() const;
 protected:
-	Resolver(const std::string& original);
 	void print_debug() const;
 	virtual digit begin (position_t k) const;
 	virtual digit end (position_t k) const;
@@ -27,10 +26,10 @@ private:
 	bool chek (digit i, position_t k) const;
 	bool is_first_letter(char c) const;
 	std::string deleteAllDublicate(const std::string& str) const;
-	std::string collectAllWods(const std::vector<std::string>& original);
+	std::string collectAllWods(const TaskType& original);
 	const digit m_end;
 	const std::string strNoDuplicates;
-	const std::vector<std::string> _original;	
+	const TaskType& _original;
 	std::vector<digit> mass;
 	Resolver(const Resolver&);
 	Resolver& operator= (const Resolver&);

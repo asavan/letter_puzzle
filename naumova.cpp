@@ -11,7 +11,7 @@ bool NaumovaPredicator::pred(const Resolver& resolver)
 	return (dara * maja == naumova);
 }
 
-taskType make_task()
+TaskType make_task()
 {
 	std::vector<std::string> task;
 	task.push_back("dara");

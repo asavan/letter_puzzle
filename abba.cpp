@@ -17,7 +17,7 @@ bool AbbaPredicator::pred(const Resolver& resolver)
 
 void abba()
 {
-	taskType task;
+	TaskType task;
 	task.push_back("abba");
 	task.push_back("bb");
 	solver_t<Resolver, AbbaPredicator>(task);

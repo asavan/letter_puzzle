@@ -10,7 +10,7 @@ public:
 
 
 template< typename T, typename P> 
-void solver_t(const taskType& task)
+void solver_t(const TaskType& task)
 {
 	size_t count = 0;
 	T resolver(task);

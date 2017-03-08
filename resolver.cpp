@@ -1,9 +1,5 @@
 #include "resolver.h"
 #include <iostream>
-Resolver::Resolver(const std::string& original) : strNoDuplicates(deleteAllDublicate(original.c_str())), mass(strNoDuplicates.size()), m_end(9)
-{
-	nextStep(0, begin(0));
-}
 
 std::string Resolver::deleteAllDublicate(const std::string& str) const
 {
@@ -36,15 +32,12 @@ bool Resolver::next()
 
 }
 
-int Resolver::makeAnyWord(const std::string& S) const
+int Resolver::makeAnyWord(const std::string& s) const
 {
-	int i = 0;
 	int result = 0;
-	while(S[i]!=0) 
-	{ 
-		result *=10;
-		result += mass[strNoDuplicates.find(S[i])];
-		i++; 
+	for (const char& c : s) {
+		result *= 10;
+		result += mass[strNoDuplicates.find(c)];
 	}
 	return result;
 }
@@ -79,10 +72,10 @@ bool Resolver::is_first_letter(char c) const
     return (found!=std::string::npos);
 }
 
-std::string Resolver::collectAllWods(const std::vector<std::string>& original)
+std::string Resolver::collectAllWods(const TaskType& original)
 {
 	std::string allWords;
-	for(std::vector<std::string>::const_iterator it = original.begin(); it != original.end(); ++it)
+	for(TaskType::const_iterator it = original.begin(); it != original.end(); ++it)
 	{
 		first_letters.push_back(it->at(0));
 		allWords.append(*it);
@@ -92,7 +85,7 @@ std::string Resolver::collectAllWods(const std::vector<std::string>& original)
 
 void Resolver::print() const
 {
-	for(std::vector<std::string>::const_iterator it = _original.begin(); it != _original.end(); ++it)
+	for(TaskType::const_iterator it = _original.begin(); it != _original.end(); ++it)
 	{
 		std::cout << makeAnyWord(*it) << " ";
 	}
@@ -108,7 +101,9 @@ void Resolver::print_debug() const
 	std::cout << std::endl;
 }
 
-Resolver::Resolver(const std::vector<std::string>& original):_original(original), m_end(9), strNoDuplicates(deleteAllDublicate(collectAllWods(original))), mass(strNoDuplicates.size())
+Resolver::Resolver(const TaskType& original):_original(original), m_end(9), 
+											strNoDuplicates(deleteAllDublicate(collectAllWods(original))), 
+											mass(strNoDuplicates.size())
 {
 	nextStep(0, begin(0));
 }
