@@ -6,7 +6,7 @@ std::string Resolver::deleteAllDublicate(const std::string& s) const
 	std::string result;
 	for (const char& c : s)
 	{
-		if(result.find(c) == std::string::npos)
+		if (result.find(c) == std::string::npos)
 		{
 			result.push_back(c);
 		}
@@ -20,16 +20,13 @@ int Resolver::makeWord(int index) const
 }
 
 bool Resolver::next()
-{		
-	for(position_t i = mass.size()-1; i >= 0; --i) {
-	// for(int i = 0; i < mass.size(); ++i) {
-		
-		if (nextStep(i, mass[i]+1)) {
+{
+	for (position_t i = mass.size() - 1; i >= 0; --i) {
+		if (nextStep(i, mass[i] + 1)) {
 			return true;
 		}
 	}
 	return false;
-
 }
 
 int Resolver::makeAnyWord(const std::string& s) const
@@ -43,19 +40,19 @@ int Resolver::makeAnyWord(const std::string& s) const
 }
 
 bool Resolver::nextStep(position_t k, digit start)
-{	
+{
 	if (start > m_end) return false;
 	for (digit i = start; i <= end(k); ++i)
 	{
 		if (chek(i, k)) continue;
 		mass[k] = i;
-		if (k+1 == mass.size())
+		if (k + 1 == mass.size())
 		{
 			return true;
 		}
 		else
 		{
-			return nextStep(k+1, begin(k+1));			
+			return nextStep(k + 1, begin(k + 1));
 		}
 	}
 	return false;
@@ -68,42 +65,42 @@ bool Resolver::char_on_position(position_t k, char c) const
 
 bool Resolver::is_first_letter(char c) const
 {
-	std::size_t found = first_letters.find(c);	
-	return (found!=std::string::npos);
+	std::size_t found = first_letters.find(c);
+	return (found != std::string::npos);
 }
 
-std::string Resolver::collectAllWods(const TaskType& original)
+std::string Resolver::collectAllWords(const TaskType& original)
 {
 	std::string allWords;
-	for(TaskType::const_iterator it = original.begin(); it != original.end(); ++it)
+	for (const std::string& word : original)
 	{
-		first_letters.push_back(it->at(0));
-		allWords.append(*it);
+		first_letters.push_back(word.front());
+		allWords.append(word);
 	}
 	return allWords;
 }
 
 void Resolver::print() const
 {
-	for(TaskType::const_iterator it = _original.begin(); it != _original.end(); ++it)
+	for (const std::string& word : _original)
 	{
-		std::cout << makeAnyWord(*it) << " ";
+		std::cout << makeAnyWord(word) << " ";
 	}
 	std::cout << std::endl;
 }
 
 void Resolver::print_debug() const
 {
-	std::cout << makeAnyWord(strNoDuplicates) << " " <<strNoDuplicates << std::endl;
-	for(size_t i = 0; i < mass.size(); ++i) {
-		std::cout <<  mass[i];
+	std::cout << makeAnyWord(strNoDuplicates) << " " << strNoDuplicates << std::endl;
+	for (size_t i = 0; i < mass.size(); ++i) {
+		std::cout << mass[i];
 	}
 	std::cout << std::endl;
 }
 
-Resolver::Resolver(const TaskType& original):_original(original), m_end(9), 
-                                             strNoDuplicates(deleteAllDublicate(collectAllWods(original))), 
-                                             mass(strNoDuplicates.size())
+Resolver::Resolver(const TaskType& original) :_original(original), m_end(9),
+                                              strNoDuplicates(deleteAllDublicate(collectAllWords(original))),
+                                              mass(strNoDuplicates.size())
 {
 	nextStep(0, begin(0));
 }
@@ -117,7 +114,7 @@ bool Resolver::chek(digit i, position_t k) const
 	return false;
 }
 
-digit Resolver::begin (position_t k) const
+digit Resolver::begin(position_t k) const
 {
 	if (is_first_letter(strNoDuplicates[k]))
 	{
@@ -126,7 +123,7 @@ digit Resolver::begin (position_t k) const
 	return 0;
 }
 
-digit Resolver::end (position_t) const
+digit Resolver::end(position_t) const
 {
 	return m_end;
 }

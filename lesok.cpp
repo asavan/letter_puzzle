@@ -15,5 +15,5 @@ bool LesokPredicator::pred(const Resolver& resolver) const
 
 void lesok()
 {	
-	solver_t<Resolver, LesokPredicator>({ "lesok", "elka" });
+	solver_t<Resolver, LesokPredicator>({ "elka", "lesok" });
 }

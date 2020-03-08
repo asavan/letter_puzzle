@@ -10,13 +10,16 @@ public:
 
 bool AbbaPredicator::pred(const Resolver& resolver) const
 {
+	int a = resolver.makeAnyWord("a"), b = resolver.makeAnyWord("b");
+	if (a >= b) {
+		return false;
+	}
 	int abba = resolver.makeAnyWord("abba"), aa = resolver.makeAnyWord("aa"), bb = resolver.makeAnyWord("bb");
-	int ba = resolver.makeAnyWord("ba"), a = resolver.makeAnyWord("a"), b = resolver.makeAnyWord("b");
-	return ((abba%aa) + (abba%bb) + (abba%ba)) == 0 && a<b;
+	int ba = resolver.makeAnyWord("ba");
+	return ((abba%aa) + (abba%bb) + (abba%ba)) == 0;
 }
 
 void abba()
 {
-	// second word need to not set b to zero
-	solver_t<Resolver, AbbaPredicator>({ "abba", "b" });
+	solver_t<Resolver, AbbaPredicator>({"abba"});
 }

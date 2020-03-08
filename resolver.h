@@ -26,7 +26,7 @@ private:
 	bool chek (digit i, position_t k) const;
 	bool is_first_letter(char c) const;
 	std::string deleteAllDublicate(const std::string& str) const;
-	std::string collectAllWods(const TaskType& original);
+	std::string collectAllWords(const TaskType& original);
 	const digit m_end;
 	const std::string strNoDuplicates;
 	const TaskType& _original;
