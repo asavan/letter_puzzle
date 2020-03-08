@@ -4,14 +4,6 @@ cmake_minimum_required(VERSION 2.8)
 
 project(letter_puzzle)
 
-file(GLOB SOURCES
-    "*.cpp"
-)
-
-file(GLOB HEADERS
-    "*.h"
-)
-
 add_subdirectory(solver)
 add_subdirectory(puzzles)
 
