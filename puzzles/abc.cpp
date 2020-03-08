@@ -1,6 +1,6 @@
 // https://knop.livejournal.com/378619.html?thread=7998459#t7998459
 
-#include "solver.h"
+#include "../solver/solver.h"
 #include <cmath>
 namespace {
 	bool is_prime(int abc) {

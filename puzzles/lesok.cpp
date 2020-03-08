@@ -1,4 +1,4 @@
-#include "solver.h"
+#include "../solver/solver.h"
 namespace {
 	bool lesokPredicator(const Resolver& r)
 	{

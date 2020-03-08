@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "puzzles/functions.h"
 #include <chrono> 
 #include <iostream> 
 using namespace std::chrono;

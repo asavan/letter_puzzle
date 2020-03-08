@@ -1,6 +1,6 @@
 // http://knop.livejournal.com/378619.html
 
-#include "solver.h"
+#include "../solver/solver.h"
 namespace {
 	bool abbaPredicator(const Resolver& r)
 	{

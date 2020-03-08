@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # SET(CMAKE_CXX_FLAGS "-std=c++0x -Wall -Wextra -pedantic")
 
-
+project(letter_puzzle)
 
 file(GLOB SOURCES
     "*.cpp"
@@ -12,5 +12,12 @@ file(GLOB HEADERS
     "*.h"
 )
 
-add_executable(resolver ${SOURCES} ${HEADERS})
-set_property(TARGET resolver PROPERTY CXX_STANDARD 20)
+add_subdirectory(solver)
+add_subdirectory(puzzles)
+
+set(SOURCES main.cpp)
+
+add_executable(letter_puzzle ${SOURCES})
+set_property(TARGET letter_puzzle PROPERTY CXX_STANDARD 20)
+
+target_link_libraries(letter_puzzle solverlib puzzleslib)
