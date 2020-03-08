@@ -7,6 +7,8 @@ using namespace std;
 int main()
 {
 	auto start = high_resolution_clock::now();
+	abc();
+	abc_fast();
 	abba();
 	lesok();	
 	naumova_fast();

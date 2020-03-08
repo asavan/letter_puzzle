@@ -1,11 +1,11 @@
 #include "solver.h"
 #include <iostream>
-void solve(Resolver& resolver, const Predicator& p)
+void solve(Resolver& resolver, std::function<bool(const Resolver&)> pred)
 {
 	size_t count = 0;
 	do
 	{
-		if (p.pred(resolver))
+		if (pred(resolver))
 		{
 			resolver.print();
 		}
