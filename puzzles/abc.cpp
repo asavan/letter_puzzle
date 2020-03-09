@@ -21,14 +21,14 @@ namespace {
 	bool abcPredicator(const Resolver& resolver)
 	{
 		int a = resolver.makeAnyWord("a"), b = resolver.makeAnyWord("b");
-		if (a >= b) {
+		if (a > b) {
 			return false;
 		}
 		int c = pow(b, a);
 		if (c > 9) {
 			return false;
 		}
-		if (b >= c) {
+		if (b > c) {
 			return false;
 		}
 		int c1 = resolver.makeAnyWord("c");
@@ -43,15 +43,37 @@ namespace {
 		FastResolver(const std::vector<std::string>& original) : Resolver(original) {}
 	protected:
 		virtual digit begin(position_t k) const;
+		virtual digit end(position_t k) const;
 	};
 
 	digit FastResolver::begin(position_t k) const
 	{
 		if (char_on_position(k, 'c'))
 		{
+			return 9;
+		}
+		if (char_on_position(k, 'a'))
+		{
+			return 2;
+		}
+		if (char_on_position(k, 'b'))
+		{
 			return 3;
 		}
 		return Resolver::begin(k);
+	}
+
+	digit FastResolver::end(position_t k) const
+	{
+		if (char_on_position(k, 'a'))
+		{
+			return 2;
+		}
+		if (char_on_position(k, 'b'))
+		{
+			return 3;
+		}
+		return Resolver::end(k);
 	}
 }
 

@@ -102,7 +102,13 @@ Resolver::Resolver(const TaskType& original) :_original(original), m_end(9),
                                               strNoDuplicates(deleteAllDublicate(collectAllWords(original))),
                                               mass(strNoDuplicates.size())
 {
-	nextStep(0, begin(0));
+	// we need init after constructor finished, in order to virtual functions works
+	// init();
+}
+
+bool Resolver::init() 
+{
+	return nextStep(0, begin(0));
 }
 
 bool Resolver::chek(digit i, position_t k) const

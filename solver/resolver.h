@@ -15,6 +15,7 @@ public:
 	int makeWord(int index) const;
 	bool next();	
 	void print() const;
+	bool init();
 protected:
 	void print_debug() const;
 	virtual digit begin (position_t k) const;
