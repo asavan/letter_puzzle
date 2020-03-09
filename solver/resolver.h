@@ -1,16 +1,11 @@
 #pragma once
-#include <string>
-#include <vector>
-
-typedef unsigned short int digit;
-typedef std::vector<std::string> TaskType;
-typedef short int position_t;
+#include "types.h"
 
 class Resolver
 {
 public:
 	
-	Resolver(const TaskType& original);
+	explicit Resolver(const TaskType& original);
 	int makeAnyWord(const std::string& str) const;
 	int makeWord(int index) const;
 	bool next();	

@@ -1,8 +1,10 @@
 #include "solver.h"
 #include <iostream>
-void solve(Resolver& resolver, std::function<bool(const Resolver&)> pred)
+
+void solve(std::function<bool(const Resolver&)> pred, Resolver& resolver)
 {
 	size_t count = 0;
+	resolver.init();
 	do
 	{
 		if (pred(resolver))
@@ -12,4 +14,10 @@ void solve(Resolver& resolver, std::function<bool(const Resolver&)> pred)
 		++count;
 	} while (resolver.next());
 	std::cout << count << std::endl;
+}
+
+void solve(std::function<bool(const Resolver&)> pred, const TaskType& task)
+{
+	Resolver resolver(task);
+	solve(pred, resolver);
 }

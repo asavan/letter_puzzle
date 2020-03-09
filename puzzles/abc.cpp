@@ -21,14 +21,14 @@ namespace {
 	bool abcPredicator(const Resolver& resolver)
 	{
 		int a = resolver.makeAnyWord("a"), b = resolver.makeAnyWord("b");
-		if (a > b) {
+		if (a >= b) {
 			return false;
 		}
 		int c = pow(b, a);
 		if (c > 9) {
 			return false;
 		}
-		if (b > c) {
+		if (b >= c) {
 			return false;
 		}
 		int c1 = resolver.makeAnyWord("c");
@@ -79,10 +79,11 @@ namespace {
 
 void abc()
 {
-	solver_t<Resolver>(abcPredicator, { "abc" });
+	solve(abcPredicator, { "abc" });
 }
 
 void abc_fast()
 {
-	solver_t<FastResolver>(abcPredicator, { "abc" });
+	FastResolver r({ "abc" });
+	solve(abcPredicator, r);
 }

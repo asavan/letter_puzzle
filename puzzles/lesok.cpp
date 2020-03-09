@@ -10,5 +10,5 @@ namespace {
 
 void lesok()
 {	
-	solver_t<Resolver>(lesokPredicator, { "elka", "lesok" });
+	solve(lesokPredicator, { "elka", "lesok" });
 }

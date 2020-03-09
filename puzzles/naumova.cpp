@@ -1,3 +1,5 @@
+// https://knop.livejournal.com/333212.html
+
 #include "../solver/solver.h"
 
 
@@ -41,10 +43,11 @@ namespace {
 
 void naumova_fast()
 {
-	solver_t<FastResolver>(naumovaPredicator, all_words);
+	// FastResolver r(all_words);
+	solve(naumovaPredicator, FastResolver(all_words));
 }
 
 void naumova()
 {
-	solver_t<Resolver>(naumovaPredicator, all_words);
+	solve(naumovaPredicator, all_words);
 }
