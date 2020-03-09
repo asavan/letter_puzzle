@@ -5,3 +5,5 @@ void naumova();
 void abba();
 void abc();
 void abc_fast();
+void gnom();
+void maiz();
