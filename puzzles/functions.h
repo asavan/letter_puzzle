@@ -7,3 +7,4 @@ void abc();
 void abc_fast();
 void gnom();
 void maiz();
+void p2020();
