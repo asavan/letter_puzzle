@@ -13,7 +13,6 @@ namespace {
 		FastResolver(const std::vector<std::string>& original) : Resolver(original) {}
 	protected:
 		virtual digit begin(position_t k) const;
-		virtual digit end(position_t k) const;
 	};
 
 	digit FastResolver::begin(position_t k) const

@@ -26,6 +26,6 @@ private:
     const std::string strNoDuplicates;
     const TaskType _original;
     std::vector<digit> mass;
-    Resolver(const Resolver&);
-    Resolver& operator= (const Resolver&);
+    Resolver(const Resolver&) = delete;
+    Resolver& operator= (const Resolver&) = delete;
 };

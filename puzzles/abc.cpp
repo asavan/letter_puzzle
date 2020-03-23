@@ -24,7 +24,7 @@ namespace {
 		if (a >= b) {
 			return false;
 		}
-		int c = pow(b, a);
+		int c = static_cast<int>(std::pow(b, a));
 		if (c > 9) {
 			return false;
 		}
