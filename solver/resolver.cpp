@@ -32,7 +32,7 @@ bool Resolver::next()
 int Resolver::makeAnyWord(const std::string& s) const
 {
     int result = 0;
-    for (const char& c : s) {
+    for (const char c : s) {
         result *= 10;
         result += mass[strNoDuplicates.find(c)];
     }
@@ -48,7 +48,7 @@ bool Resolver::nextStep(position_t k, digit start)
     {
         if (chek(i, k)) continue;
         mass[k] = i;
-        if (k + 1 == mass.size())
+        if (k + 1 == static_cast<position_t>(mass.size()))
         {
             return true;
         }

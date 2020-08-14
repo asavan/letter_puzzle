@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-typedef unsigned short int digit;
+typedef unsigned char digit;
 typedef std::vector<std::string> TaskType;
-typedef short int position_t;
+typedef signed char position_t;
 class Resolver;
