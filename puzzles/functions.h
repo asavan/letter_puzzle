@@ -9,3 +9,4 @@ void gnom();
 void maiz();
 void p2020();
 void you();
+void putin();
