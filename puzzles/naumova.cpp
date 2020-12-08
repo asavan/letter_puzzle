@@ -43,8 +43,8 @@ namespace {
 
 void naumova_fast()
 {
-	// FastResolver r(all_words);
-	solve(naumovaPredicator, FastResolver(all_words));
+	FastResolver res(all_words);
+	solve(naumovaPredicator, res);
 }
 
 void naumova()
