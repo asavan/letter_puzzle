@@ -7,9 +7,10 @@ using namespace std;
 int main()
 {
     auto start = high_resolution_clock::now();
-    eng_math();
+    // eng_math();
     // putin();
-    //abc_fast();
+    abc_fast();
+    abc();
     //lesok();
     //abba();
     //gnom();
