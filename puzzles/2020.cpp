@@ -7,7 +7,7 @@ namespace {
 	public:
 		FastResolver(const std::vector<std::string>& original) : Resolver(original) {}
 	protected:
-		virtual digit begin(position_t k) const { return 1; }
+		virtual digit begin(position_t /*unused*/) const { return 1; }
 	};
 }
 

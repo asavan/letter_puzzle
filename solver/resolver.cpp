@@ -21,7 +21,7 @@ int Resolver::makeWord(int index) const
 
 bool Resolver::next()
 {
-    for (position_t i = mass.size() - 1; i >= 0; --i) {
+    for (position_t i = static_cast<position_t>(mass.size()) - 1; i >= 0; --i) {
         if (nextStep(i, mass[i] + 1)) {
             return true;
         }
