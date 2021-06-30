@@ -14,5 +14,5 @@ namespace {
 void p2020()
 {
 	FastResolver res({ "123456789" });
-	solve([](const Resolver& r) { return (r.makeWord(0) % 202 == 0); }, res);
+	solve([](const Resolver& r) { return (r.w(0) % 202 == 0); }, res);
 }

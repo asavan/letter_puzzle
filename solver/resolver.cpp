@@ -19,6 +19,11 @@ int Resolver::makeWord(int index) const
     return makeAnyWord(_original[index]);
 }
 
+int Resolver::w(int index) const
+{
+    return makeWord(index);
+}
+
 bool Resolver::next()
 {
     for (position_t i = static_cast<position_t>(mass.size()) - 1; i >= 0; --i) {

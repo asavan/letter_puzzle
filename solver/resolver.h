@@ -7,6 +7,7 @@ public:
     explicit Resolver(const TaskType& original);
     int makeAnyWord(const std::string& str) const;
     int makeWord(int index) const;
+    int w(int index) const;
     bool next();
     void print() const;
     bool init();
