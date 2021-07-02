@@ -2,15 +2,7 @@
 
 #include "../solver/solver.h"
 
-namespace {
-	bool predicator(const Resolver& r)
-	{
-		int a = r.makeAnyWord("ty"), b = r.makeAnyWord("vy");
-		return a*4 == b;
-	}
-}
-
 void you()
 {
-	solve(predicator, { "ty", "vy" });
+    solve([](const Resolver& r) { return r.w(0) * 4 == r.w(1); }, { "ty", "vy" });
 }

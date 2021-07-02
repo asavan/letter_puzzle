@@ -1,13 +1,6 @@
 #include "../solver/solver.h"
-namespace {
-	bool lesokPredicator(const Resolver& r)
-	{
-		int elka = r.makeAnyWord("elka"), lesok = r.makeAnyWord("lesok");
-		return lesok % elka == 0;
-	}
-}
 
 void lesok()
 {	
-	solve(lesokPredicator, { "elka", "lesok" });
+	solve([](const Resolver& r) { return r.w(1) % r.w(0) == 0; }, { "elka", "lesok" });
 }
