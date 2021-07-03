@@ -1,0 +1,9 @@
+#pragma once
+void udar();
+void rabota();
+void buketik();
+void futbol();
+void gorod();
+void nauka();
+void dyry();
+void eda();

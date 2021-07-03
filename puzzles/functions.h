@@ -1,4 +1,5 @@
 #pragma once
+#include "rebus1.h"
 void lesok();
 void naumova_fast();
 void naumova();
@@ -12,7 +13,3 @@ void you();
 void putin();
 void eng_math();
 void shad_2021();
-void udar();
-void rabota();
-void buketik();
-void futbol();
