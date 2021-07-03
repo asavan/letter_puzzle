@@ -1,9 +1,5 @@
-file(GLOB PUZZLE_SOURCES
-    "*.cpp"
-)
+file(GLOB PUZZLE_SOURCES "*.cpp")
 
-file(GLOB PUZZLE_HEADERS
-    "*.h"
-)
+set(PUZZLE_HEADERS "functions.h")
 
 add_library(puzzleslib STATIC ${PUZZLE_SOURCES} ${PUZZLE_HEADERS})

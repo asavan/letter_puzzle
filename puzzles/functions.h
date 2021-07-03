@@ -12,3 +12,7 @@ void you();
 void putin();
 void eng_math();
 void shad_2021();
+void udar();
+void rabota();
+void buketik();
+void futbol();
