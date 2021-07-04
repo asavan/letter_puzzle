@@ -3,6 +3,6 @@
 
 int main()
 {
-    measure(udar);
+    measure(rebus1_last);
     return 0;
 }
