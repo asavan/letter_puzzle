@@ -176,6 +176,12 @@ namespace {
 
         {91, []() {solve([](const Resolver& r) { return r.w(0) * 3 == r.w(1);  }, { "сотня", "триста"}); }},
         {92, []() {solve([](const Resolver& r) { return r.w(0) * 4 == r.w(1);  }, { "парус", "регата"}); }},
+        {-130, []() {solve([](const Resolver& r) { return r.w(0) * 2 + r.w(1) == r.w(2) && r.w(3) == 3;  }, { "слово", "за", "драка", "з"}); }},
+        {-131, []() {solve([](const Resolver& r) { return r.w(0) * 3 == r.w(1);  }, { "три", "дыры"}); }},
+        {-132, []() {solve([](const Resolver& r) { return r.w(0) * 6 == r.w(1);  }, { "урок", "школа"}); }},
+        {-133, []() {solve([](const Resolver& r) { return r.w(0) * 4 == r.w(1);  }, { "стакан", "бутылка"}); }},
+        {-134, []() {solve([](const Resolver& r) { return r.w(0) * 2 == r.w(1);  }, { "кирпич", "стенка"}); }},
+        {-135, []() {solve([](const Resolver& r) { return r.w(0) * 2 == r.w(1);  }, { "ахинея", "чепуха"}); }},
     };
 }
 
