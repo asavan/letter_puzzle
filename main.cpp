@@ -3,6 +3,6 @@
 
 int main()
 {
-    measure(walaw);
+    measure(send_more);
     return 0;
 }
