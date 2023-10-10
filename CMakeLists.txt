@@ -19,4 +19,4 @@ set(HEADERS measure.h puzzles/functions.h)
 add_executable(letter_puzzle ${SOURCES} ${HEADERS})
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT letter_puzzle)
 
-target_link_libraries(letter_puzzle solverlib puzzleslib)
+target_link_libraries(letter_puzzle puzzleslib)

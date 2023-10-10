@@ -1,5 +1,6 @@
 #include "rebus1.h"
 #include "../solver/solver.h"
+#include <cmath>
 #include <map>
 #include <functional>
 

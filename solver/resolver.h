@@ -17,16 +17,18 @@ protected:
     virtual digit end(position_t k) const;
     virtual bool char_on_position(position_t k, char c) const;
 private:
+    const digit m_end;
+    const TaskType _original;
     std::string first_letters;
+    const std::string strNoDuplicates;
+    std::vector<digit> mass;
+    
     bool nextStep(position_t k, digit value);
     bool chek(digit i, position_t k) const;
     bool is_first_letter(char c) const;
     std::string deleteAllDublicate(const std::string& str) const;
     std::string collectAllWords(const TaskType& original);
-    const digit m_end;
-    const std::string strNoDuplicates;
-    const TaskType _original;
-    std::vector<digit> mass;
+    
     Resolver(const Resolver&) = delete;
     Resolver& operator= (const Resolver&) = delete;
 };

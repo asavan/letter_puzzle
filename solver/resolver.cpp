@@ -105,7 +105,7 @@ void Resolver::print_debug() const
     std::cout << std::endl;
 }
 
-Resolver::Resolver(const TaskType& original) :_original(original), m_end(9),
+Resolver::Resolver(const TaskType& original) : m_end(9), _original(original),
                                               strNoDuplicates(deleteAllDublicate(collectAllWords(original))),
                                               mass(strNoDuplicates.size())
 {
