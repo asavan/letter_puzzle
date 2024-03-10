@@ -3,6 +3,6 @@
 
 int main()
 {
-    measure(send_more);
+    measure(waverma);
     return 0;
 }
